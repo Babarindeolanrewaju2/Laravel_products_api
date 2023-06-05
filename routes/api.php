@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,8 @@ Route::post('/products', [ProductController::class, 'store']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
 Route::put('/products/{id}', [ProductController::class, 'update']);
 Route::delete('/products/{id}', [ProductController::class, 'destroy']);
+
+Route::get('/cart', [CartItemController::class, 'index']);
+Route::post('/cart', [CartItemController::class, 'store']);
+Route::put('/cart/{id}', [CartItemController::class, 'update']);
+Route::delete('/cart/{id}', [CartItemController::class, 'destroy']);
